@@ -1,28 +1,23 @@
-== README
+# code-asaurus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ - Purpose:
+ To connect students to resources for learning to code in Ruby and JS.  Making a difference one line at a time.  And also dinosaurs.
 
-Things you may want to cover:
+ - Getting Started
+ link to Heroku app
+ Students can sign in to view coding resources such as videos, cxode snippets, and short MD articles (definitions and short explanations).
 
-* Ruby version
+ - Dependencies (not just software)
+ * Users will need a modern web broswer (No IE!), and an email address.
+ * Ace Editor
+ * CircleCI
+ * Gems
+  - Devise
+  - CanCanCan
+  - BrakeMan
+  - Video Thumb
 
-* System dependencies
+ - configuration instructions
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+ - examples
+ - contributing and license if open source
