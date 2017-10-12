@@ -1,1 +1,37 @@
-hi kadin
+<div>
+  <div>
+    <%= form_tag(resources_path, method: :get) do %>
+      <%= text_field_tag "search[term]" %>
+      <%= select_tag "search[resource_type]", options_for_select(["Pick a type", "video", "snippet", "markdown"]) %>
+      <%= submit_tag 'Search' %>
+    <% end %>
+  </div>
+  <div>Search Type</div>
+  <% if @resources %>
+    <div>
+      <h2>Search Results</h2>
+       <ul>
+        <%= render @resources %>
+      </ul>
+    </div>
+  <% else %>
+    <div>
+      <h2>Videos</h2>
+      <ul>
+        <%= render partial: 'resource', :collection => @videos %>
+      </ul>
+    </div>
+    <div>
+      <h2>Snippets</h2>
+      <ul>
+        <%= render partial: 'resource', :collection => @snippets %>
+      </ul>
+    </div>
+    <div>
+      <h2>Markdown</h2>
+      <ul>
+        <%= render partial: 'resource', :collection => @markdowns %>
+      </ul>
+    </div>
+  <% end %>
+</div>
