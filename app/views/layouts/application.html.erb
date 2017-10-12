@@ -10,8 +10,8 @@
 </head>
 <body class="container">
   <div class="heading">
-<h1>Codeasaurus</h1>
-  <%= image_tag('sammy.png', alt:'Green dinosaur') %>
+    <%= image_tag('sammy.png', alt:'Green dinosaur') %>
+      <h1>Codeasaurus</h1>
 
   <nav>
     <ul>
@@ -27,7 +27,11 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<div class="content">
+  <%= yield %>
+</div>
+
+
 
 </body>
 </html>

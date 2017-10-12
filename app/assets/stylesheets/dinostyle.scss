@@ -13,21 +13,32 @@ $heading_font:'Bowlby One SC', cursive;
   font-family: $text_font;
   background-color:$site_background;
 }
-.heading{
+.heading {
   grid-column: 1 / 4;
 }
+
 img{
-  float:right;
+  position: absolute;
 }
+
+nav {
+  grid-column: 3 / 4;
+}
+
 h1{
   font-size:3em;
+  position: relative;
 }
+
 h1, h2{
   color:$heading_color;
   font-family:$heading_font;
   text-align:center;
 
 }
+
+
+
 h2{
   font-size:2em;
   grid-column: 2/3;
