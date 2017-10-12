@@ -22,6 +22,10 @@ class ResourcesController < ApplicationController
   def new
   end
 
+  def show
+    @resource = Resource.find(params[:id])
+  end
+
   private
 
   def resource_params

@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto', media: 'all', 'data-turbolinks-track' => true%>
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Bowlby+One+SC', media: 'all', 'data-turbolinks-track' => true%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js'  %>
   <%= csrf_meta_tags %>
 </head>
 <body class="container">
@@ -31,5 +31,6 @@
 
 
 
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
