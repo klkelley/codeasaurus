@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 feature 'As a student I can view resources' do
+  before (:all) do
+    Rails.application.load_seed
+  end
+
   scenario 'A student visits the resource page' do
     visit '/resources'
 
@@ -19,6 +23,10 @@ end
 
 
 feature 'As a student, I can search resources' do
+  before (:all) do
+    Rails.application.load_seed
+  end
+
   scenario "The search button doesn't change the page" do
     visit '/resources'
     fill_in "search[term]", with: "Blog in Rails"
