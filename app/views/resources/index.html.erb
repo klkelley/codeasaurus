@@ -1,1 +1,22 @@
-hi kadin
+<div>
+  <div>Search Bar</div>
+  <div>Search Type</div>
+  <div>
+    <h2>Videos</h2>
+    <ul>
+      <%= render partial: 'resource', :collection => @videos %>
+    </ul>
+  </div>
+  <div>
+    <h2>Snippets</h2>
+    <ul>
+      <%= render partial: 'resource', :collection => @snippets %>
+    </ul>
+  </div>
+  <div>
+    <h2>Markdown</h2>
+    <ul>
+      <%= render partial: 'resource', :collection => @markdowns %>
+    </ul>
+  </div>
+</div>
