@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'simplecov', :require => false, :group => :test
+gem 'video_thumb'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

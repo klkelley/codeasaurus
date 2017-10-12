@@ -1,13 +1,17 @@
 class ResourcesController < ApplicationController
   def index
-    if params[:search] && (params[:search][:term].length > 0 || params[:search][:resource_type] != "Pick a type")
+    if params[:search]
+      search_term = "%#{params[:search][:term]}%".downcase
       if params[:search][:term] && params[:search][:resource_type] != "Pick a type"
-        @resources = Resource.where('lower(title) LIKE ? AND resource_type = ?', "%#{params[:search][:term]}%".downcase, params[:search][:resource_type])
+        @resources = Resource.where('lower(title) LIKE ? or lower(description) LIKE ? AND resource_type = ?', search_term, search_term, params[:search][:resource_type])
       elsif params[:search][:term].length > 0
-        @resources = Resource.where('lower(title) LIKE ?', "%#{params[:search][:term]}%".downcase)
+        @resources = Resource.where('lower(title) LIKE ? or lower(description) LIKE ?', search_term, search_term)
       elsif params[:search][:resource_type] != "Pick a type"
         @resources = Resource.where('resource_type = ?', params[:search][:resource_type])
+      elsif params[:search] && (params[:search][:term].length == 0 && params[:search][:resource_type] == "Pick a type")
+        redirect_to resources_path, notice: "Please enter a keyword or resource type and try again."
       end
+
     else
       @videos = Resource.where(resource_type: "video").limit(3)
       @snippets = Resource.where(resource_type: "snippet").limit(3)
