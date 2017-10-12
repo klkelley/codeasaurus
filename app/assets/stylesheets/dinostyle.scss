@@ -18,16 +18,17 @@ $heading_font:'Bowlby One SC', cursive;
 }
 
 img{
-  position: absolute;
+  float:left;
 }
 
 nav {
-  grid-column: 3 / 4;
+  float:right;
+
 }
 
 h1{
   font-size:3em;
-  position: relative;
+
 }
 
 h1, h2{
@@ -65,4 +66,11 @@ input[type=submit]{
   width:8em;
   height:2em;
 
+}
+nav ul{
+  list-style: none;
+}
+.notice{
+  color:blue;
+  grid-column:2/3;
 }

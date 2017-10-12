@@ -11,19 +11,18 @@
 <body class="container">
   <div class="heading">
     <%= image_tag('sammy.png', alt:'Green dinosaur') %>
-      <h1>Codeasaurus</h1>
-
-  <nav>
-    <ul>
-      <% unless current_page?('/')%>
-        <li><%= link_to "Home", root_path %></li>
-      <% end %>
-      <% if user_signed_in? %>
-        <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
-      <% end %>
-    </ul>
-  </nav>
-</div>
+    <nav>
+      <ul>
+        <% unless current_page?('/')%>
+          <li><%= link_to "Home", root_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <h1>Codeasaurus</h1>
+  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
