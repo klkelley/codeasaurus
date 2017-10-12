@@ -51,10 +51,19 @@ feature 'As a student, I can search resources' do
 
   scenario 'The search form returns an alert when no term or type is specified' do
     visit '/resources'
-    first_link_list = page.find("ul")
+    first_link_list = page.first("ul")
     click_button("Search")
-    expect(page.find("ul")).to eq first_link_list
+    expect(page.first("ul").path).to eq first_link_list.path
     expect(page).to have_content("Please enter a keyword or resource type and try again.")
     expect(current_path).to eq resources_path
   end
+
+  scenario 'Returns an alert when match is found' do
+    visit '/resources'
+    fill_in "search[term]", with: "squiggles dfgsdfgsdr go Cubs!"
+    click_button("Search")
+    expect(page).to have_content("Sorry, nothing matches that search.")
+    expect(current_path).to eq resources_path
+  end
+
 end

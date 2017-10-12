@@ -6,12 +6,16 @@
       <%= submit_tag 'Search' %>
     <% end %>
   </div>
-  <div>Search Type</div>
+
   <% if @resources %>
     <div>
       <h2>Search Results</h2>
        <ul>
-        <%= render @resources %>
+        <% if @resources.length > 0 %>
+          <%= render @resources %>
+          <% else %>
+          <%= "Sorry, nothing matches that search." %>
+          <% end %>
       </ul>
     </div>
   <% else %>
