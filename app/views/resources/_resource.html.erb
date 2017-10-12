@@ -1,4 +1,4 @@
-<p class="<%= resource.resource_type %>">
+<div class="<%= resource.resource_type %>">
   <p>
     <% if resource.resource_type == "video" %>
       <%= image_tag(resource.thumb)%>
@@ -8,4 +8,4 @@
     <%= link_to resource.title, resource_path(resource) %>
   </p>
   <p><%= resource.description %></p>
-</p>
+</div>

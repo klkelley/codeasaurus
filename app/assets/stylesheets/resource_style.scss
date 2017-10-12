@@ -1,0 +1,31 @@
+$site_background:#fff;
+$text:#2d2d2d;
+$heading_color:#66cccc;
+$error:#f2777a;
+
+#resource-listing {
+  grid-column: 1 / 4;
+}
+
+.resource-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.video, .snippet, .markdown {
+  border: $text 2px solid;
+  border-radius: 7%;
+  width: 30%;
+  height: 275px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.field select{
+ border: 2px solid $text;
+  font-size:1.1em;
+  padding:10px;
+  border-radius:20px;
+}
