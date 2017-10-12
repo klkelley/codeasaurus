@@ -7,10 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>Codeasaurus</h1>
+  <nav>
+    <ul>
+      <% unless current_page?('/')%>
+        <li><%= link_to "Home", root_path %></li>
+      <% end %>
+      <% if user_signed_in? %>
+        <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </nav>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <%= link_to "sign up", new_user_registration_path %>
-  <%= link_to "sign out", destroy_user_session_path, method: :delete%>
 
 <%= yield %>
 
