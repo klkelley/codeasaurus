@@ -19,13 +19,6 @@ end
 
 
 feature 'As a student, I can search resources' do
-  scenario 'The search field returns a match' do
-    visit '/resources'
-    fill_in "search[term]", with: "Change Your Life"
-    click_button("Search")
-    expect(page).to have_content("How to Learn Rails and Change Your Life")
-  end
-
   scenario "The search button doesn't change the page" do
     visit '/resources'
     fill_in "search[term]", with: "Blog in Rails"
@@ -33,10 +26,35 @@ feature 'As a student, I can search resources' do
     expect(current_path).to eq resources_path
   end
 
-  scenario "The search type returns resources of that type" do
+  scenario 'The search field returns a match for a search term with no type specified' do
+    visit '/resources'
+    fill_in "search[term]", with: "Change Your Life"
+    click_button("Search")
+    expect(page).to have_content("How to Learn Rails and Change Your Life")
+  end
+
+  scenario "The search type returns resources of that type when no search terms are entered" do
     visit '/resources'
     select 'video', from: "search[resource_type]"
     click_button("Search")
     expect(page).to have_css('.video')
+  end
+
+  scenario 'The search returns a match for a search term with of the specified type' do
+    visit '/resources'
+    fill_in "search[term]", with: "Change Your Life"
+    select 'video', from: "search[resource_type]"
+    click_button("Search")
+    expect(page).to have_content("How to Learn Rails and Change Your Life")
+    expect(page).to have_css('.video')
+  end
+
+  scenario 'The search form returns an alert when no term or type is specified' do
+    visit '/resources'
+    first_link_list = page.find("ul")
+    click_button("Search")
+    expect(page.find("ul")).to eq first_link_list
+    expect(page).to have_content("Please enter a keyword or resource type and try again.")
+    expect(current_path).to eq resources_path
   end
 end
