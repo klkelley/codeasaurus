@@ -15,6 +15,7 @@ $heading_font:'Bowlby One SC', cursive;
 }
 .heading {
   grid-column: 1 / 4;
+
 }
 
 img{
@@ -73,4 +74,9 @@ nav ul{
 .notice{
   color:blue;
   grid-column:2/3;
+}
+.alert{
+  grid-column:2/3;
+  color:$error;
+  text-align:center;
 }
