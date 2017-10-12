@@ -1,0 +1,11 @@
+<div class="<%= resource.resource_type %>">
+  <p>
+    <% if resource.resource_type == "video" %>
+      <%= image_tag(resource.thumb)%>
+    <% end %>
+  </p>
+  <p>
+    <%= link_to resource.title, resource_path(resource) %>
+  </p>
+  <p><%= resource.description %></p>
+</div>
