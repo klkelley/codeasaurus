@@ -104,3 +104,23 @@ a{
     list-style: none;
   }
 }
+
+
+
+
+
+
+
+
+nav a {
+  list-style: none;
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: $heading_color;
+  border-radius:20px;
+}
+
+nav a:hover {
+  background: darken($site_background, 5%);
+}
