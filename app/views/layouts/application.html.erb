@@ -2,17 +2,34 @@
 <html>
 <head>
   <title>Codeasaurus</title>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto', media: 'all', 'data-turbolinks-track' => true%>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Bowlby+One+SC', media: 'all', 'data-turbolinks-track' => true%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container">
+  <div class="heading">
+    <%= image_tag('sammy.png', alt:'Green dinosaur') %>
+    <nav>
+      <ul>
+        <% unless current_page?('/')%>
+          <li><%= link_to "Home", root_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <h1>Codeasaurus</h1>
+  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <%= link_to "sign up", new_user_registration_path %>
-  <%= link_to "sign out", destroy_user_session_path, method: :delete%>
 
-<%= yield %>
+  <%= yield %>
+
+
+
 
 </body>
 </html>

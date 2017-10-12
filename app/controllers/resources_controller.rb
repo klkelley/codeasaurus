@@ -15,9 +15,13 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def new
+  end
+
   private
 
   def resource_params
     params.require(:resource).permit(:term)
   end
 end
+

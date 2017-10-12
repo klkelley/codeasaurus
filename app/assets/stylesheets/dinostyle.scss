@@ -1,0 +1,126 @@
+$site_background:#fff;
+$text:#2d2d2d;
+$heading_color:#66cccc;
+$error:#f2777a;
+$text_font:'Roboto', sans-serif;
+$heading_font:'Bowlby One SC', cursive;
+
+
+.container {
+  font-size:14px;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  font-family: $text_font;
+  background-color:$site_background;
+}
+.heading {
+  grid-column: 1 / 4;
+
+}
+
+.heading img{
+  float:left;
+  height:12em;
+}
+
+.heading nav {
+  float:right;
+
+}
+
+h1{
+  font-size:3em;
+}
+
+h1, h2{
+  color:$heading_color;
+  font-family:$heading_font;
+  text-align:center;
+
+}
+
+
+
+h2{
+  font-size:2em;
+  grid-column: 2/3;
+}
+.field{
+  padding:10px;
+}
+.content {
+  grid-column:2/3;
+  padding:30px 0;
+  border:5px solid black;
+  border-radius: 25px;
+  font-size:1em;
+  text-align:center;
+
+  border-color:solid $text 1 px;
+}
+.field input{
+ border: 2px solid $text;
+  font-size:1.1em;
+  padding:10px;
+  border-radius:20px;
+}
+
+input[type=submit]{
+  letter-spacing: 2px;
+  background-color: $heading_color;
+  border: 1px solid $text;
+  font-family:$heading_font;
+  color: $text;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  border-radius:15px;
+}
+nav ul{
+  list-style: none;
+}
+.notice{
+  color:blue;
+  grid-column:2/3;
+}
+.alert{
+  grid-column:2/3;
+  color:$error;
+  text-align:center;
+}
+
+a{
+  color:$heading_color;
+}
+
+#error_explanation{
+  h2{
+    font-size:1.2em;
+    color:$error;
+  }
+  ul{
+    list-style: none;
+  }
+}
+
+
+
+
+
+
+
+
+nav a {
+  list-style: none;
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: $heading_color;
+  border-radius:20px;
+}
+
+nav a:hover {
+  background: darken($site_background, 5%);
+}
