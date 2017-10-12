@@ -21,15 +21,22 @@ end
 feature 'As a student, I can search resources' do
   scenario 'The search field returns a match' do
     visit '/resources'
-    fill_in "term", with: "Change Your Life"
+    fill_in "search[term]", with: "Change Your Life"
     click_button("Search")
     expect(page).to have_content("How to Learn Rails and Change Your Life")
   end
 
   scenario "The search button doesn't change the page" do
     visit '/resources'
-    fill_in "term", with: "Blog in Rails"
+    fill_in "search[term]", with: "Blog in Rails"
     click_button("Search")
     expect(current_path).to eq resources_path
+  end
+
+  scenario "The search type returns resources of that type" do
+    visit '/resources'
+    select 'video', from: "search[resource_type]"
+    click_button("Search")
+    expect(page).to have_css('.video')
   end
 end
