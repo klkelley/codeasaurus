@@ -10,3 +10,11 @@ feature 'As a student I can view snippets' do
     expect(page).to have_content 'An example of some simple validation methods in Rails.'
   end
 end
+
+feature 'As a student I can view videos' do
+  scenario 'A student can view videos' do
+    visit '/resources'
+    click_link("Ruby on Rails")
+    expect(page).to have
+  end
+end
