@@ -1,37 +1,41 @@
-<div>
-  <div>
+<div id="resource-listing">
+  <div class="field">
     <%= form_tag(resources_path, method: :get) do %>
       <%= text_field_tag "search[term]" %>
       <%= select_tag "search[resource_type]", options_for_select(["Pick a type", "video", "snippet", "markdown"]) %>
       <%= submit_tag 'Search' %>
     <% end %>
   </div>
-  <div>Search Type</div>
+
   <% if @resources %>
     <div>
       <h2>Search Results</h2>
-       <ul>
-        <%= render @resources %>
-      </ul>
+       <div class="resource-content">
+        <% if @resources.length > 0 %>
+          <%= render @resources %>
+          <% else %>
+          <p class='notice'><%= "Sorry, nothing matches that search." %></p>
+          <% end %>
+      </div>
     </div>
   <% else %>
     <div>
-      <h2>Videos</h2>
-      <ul>
+      <h2 class="resource-type">Videos</h2>
+      <div class="resource-content">
         <%= render partial: 'resource', :collection => @videos %>
-      </ul>
+      </div>
     </div>
     <div>
-      <h2>Snippets</h2>
-      <ul>
+      <h2 class="resource-type">Snippets</h2>
+      <div class="resource-content">
         <%= render partial: 'resource', :collection => @snippets %>
-      </ul>
+      </div>
     </div>
     <div>
-      <h2>Markdown</h2>
-      <ul>
+      <h2 class="resource-type">Markdown</h2>
+      <div class="resource-content">
         <%= render partial: 'resource', :collection => @markdowns %>
-      </ul>
+      </div>
     </div>
   <% end %>
 </div>
