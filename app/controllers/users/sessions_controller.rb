@@ -5,14 +5,14 @@ class Users::SessionsController < Devise::SessionsController
 
 
   # GET /resource/sign_in
-  def new
-    redirect_to '/butts' if user_signed_in?
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource/sign_in
   def create
     super
-    redirect_to '/butts'
+    redirect_to resource_path
   end
 
   # DELETE /resource/sign_out
