@@ -14,7 +14,7 @@
         <% if @resources.length > 0 %>
           <%= render @resources %>
           <% else %>
-          <%= "Sorry, nothing matches that search." %>
+          <p class='notice'><%= "Sorry, nothing matches that search." %></p>
           <% end %>
       </div>
     </div>

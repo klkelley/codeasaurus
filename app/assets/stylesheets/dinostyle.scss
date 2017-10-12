@@ -81,8 +81,12 @@ input[type=submit]{
 nav ul{
   list-style: none;
 }
+nav ul li {
+  display: inline-block;
+  font-family: $text_font;
+}
 .notice{
-  color:blue;
+  color: $error;
   grid-column:2/3;
 }
 .alert{
