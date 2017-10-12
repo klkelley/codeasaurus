@@ -7,7 +7,7 @@ $heading_font:'Bowlby One SC', cursive;
 
 
 .container {
-  font-size:20px;
+  font-size:14px;
   display: grid;
   grid-template-columns: repeat(3, 33%);
   font-family: $text_font;
@@ -18,18 +18,18 @@ $heading_font:'Bowlby One SC', cursive;
 
 }
 
-img{
+.heading img{
   float:left;
+  height:120px;
 }
 
-nav {
+.heading nav {
   float:right;
 
 }
 
 h1{
   font-size:3em;
-
 }
 
 h1, h2{
