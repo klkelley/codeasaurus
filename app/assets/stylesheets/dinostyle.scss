@@ -1,0 +1,57 @@
+$site_background:#fff;
+$text:#2d2d2d;
+$heading_color:#66cccc;
+$error:#f2777a;
+$text_font:'Roboto', sans-serif;
+$heading_font:'Bowlby One SC', cursive;
+
+
+.container {
+  font-size:20px;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  font-family: $text_font;
+  background-color:$site_background;
+}
+.heading{
+  grid-column: 1 / 4;
+}
+img{
+  float:right;
+}
+h1{
+  font-size:3em;
+}
+h1, h2{
+  color:$heading_color;
+  font-family:$heading_font;
+  text-align:center;
+
+}
+h2{
+  font-size:2em;
+  grid-column: 2/3;
+}
+.field{
+  padding:10px;
+}
+.content {
+  grid-column:2/3;
+  padding:30px 0;
+  border:1px solid black;
+  border-radius: 25px;
+  font-size:1em;
+  text-align:center;
+
+  border-color:solid black 1 px;
+}
+input{
+  font-size:1em;
+}
+input[type=submit]{
+  margin:30px;
+  -webkit-appearance:none;
+  width:8em;
+  height:2em;
+
+}
