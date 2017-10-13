@@ -26,10 +26,14 @@ Resource.create(title: "How to Learn Rails and Change Your Life: Two Ruby on Rai
   end
 end", resource_type: "snippet"),
 
-Resource.create(title: "Writing useful commit messages", description: "A very important skill to learn", body: "The **rendered** markdown is on the *right*
+Resource.create(
+  title: "Writing useful commit messages",
+  description: "A very important skill to learn",
+  body: "The **rendered** markdown is on the *right*
   This is a [link](https://google.com)
   * apples
-  * oranges", resource_type: "markdown")
+  * oranges",
+  resource_type: "markdown")
 ]
 
 squiggles.resources = resources

@@ -1,9 +1,11 @@
 $(document).ready(function() {
   var $target = $('#markdown')
-  var text = $target.text()
-  var converter = new showdown.Converter()
+  var text = $target.text().trim()
+  console.log(text)
+  var converter = new showdown.Converter({omitExtraWLInCodeBlock: 'true'})
   var html = converter.makeHtml(text);
-    $target.html(html);
+  console.log(html)
+  $target.html(html);
 
   var $ace = $('#snippet')
   if ($ace.size() > 0) {
