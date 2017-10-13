@@ -9,7 +9,9 @@
   </p>
   <p><%= resource.description %></p>
 
+<% if current_user.teacher %>
   <%= link_to "edit", edit_resource_path(resource), class: "edit" %>
+<% end %>
 </div>
 
 
