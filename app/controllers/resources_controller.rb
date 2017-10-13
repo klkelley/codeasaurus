@@ -20,6 +20,8 @@ class ResourcesController < ApplicationController
   end
 
   def new
+    p params
+    @resource = Resource.new(resource_type: params[:type])
   end
 
   def show

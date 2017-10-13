@@ -21,6 +21,9 @@
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
             <% if current_user.teacher %>
               <li><%= link_to "Invite", new_user_invitation_path %></li>
+              <li><%= link_to "Add Video", new_path("video") %></li>
+              <li><%= link_to "Add Markdown", new_path("markdown") %></li>
+              <li><%= link_to "Add Snippet", new_path("snippet") %></li>
             <% end %>
         <% end %>
       </ul>
