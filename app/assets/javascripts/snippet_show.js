@@ -11,7 +11,6 @@ $(document).ready(function() {
 
 
     $('.edit-field.snippet > .edit_resource').on("submit", function(){
-      event.preventDefault();
       console.log(editor);
       console.log($codeArea);
       console.log(editor.getSession().getValue());
@@ -19,7 +18,6 @@ $(document).ready(function() {
     });
 
     $('.edit-field.markdown > .edit_resource').on("submit", function(){
-      event.preventDefault();
       console.log(editor.getSession().getValue());
       $codeArea.val(editor.getSession().getValue());
     });

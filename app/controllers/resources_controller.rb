@@ -30,10 +30,23 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
   end
 
+  def update
+    @resource = Resource.find(params[:id])
+    if @resource.update_attributes(update_resource_params)
+      render 'show'
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def resource_params
     params.require(:resource).permit(:term)
+  end
+
+  def update_resource_params
+    params.require(:resource).permit(:title, :body, :description)
   end
 end
 

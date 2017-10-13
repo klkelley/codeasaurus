@@ -15,7 +15,7 @@
     <% if @resource.resource_type == 'snippet' || @resource.resource_type == 'markdown'%>
       <div id='snippet'><%= @resource.body %></div>
     <% end %>
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
   <div>
     <%= f.submit "Update" %>
