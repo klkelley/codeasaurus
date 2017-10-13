@@ -2,6 +2,14 @@
 
 <p class="resource_description"><%= @resource.description %></p>
 
-<div id="editor">
-  <%= @resource.body %>
-</div>
+<% if @resource.resource_type == "snippet" %>
+  <div id="editor">
+    <%= @resource.body %>
+  </div>
+<% end %>
+
+<% if @resource.resource_type == "video" %>
+  <div>
+    <%= @resource.iframe.html_safe %>
+  </div>
+<% end %>

@@ -193,6 +193,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    video_player (1.0.0)
     video_thumb (0.1.2)
       json
       nokogiri
@@ -228,6 +229,7 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (>= 1.3.0)
+  video_player
   video_thumb
   web-console (~> 2.0)
 
