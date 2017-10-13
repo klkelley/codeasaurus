@@ -39,6 +39,12 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def destroy
+    @resource = Resource.find(params[:id])
+    @resource.destroy
+    redirect_to root_path
+  end
+
   private
 
   def resource_params
@@ -47,6 +53,10 @@ class ResourcesController < ApplicationController
 
   def update_resource_params
     params.require(:resource).permit(:title, :body, :description)
+  end
+
+  def delete_resource_params
+    params.require(:id)
   end
 end
 
