@@ -7,3 +7,9 @@
     <%= @resource.body %>
   </div>
 <% end %>
+
+<% if @resource.resource_type == "video" %>
+  <div>
+    <%= @resource.iframe.html_safe %>
+  </div>
+<% end %>
