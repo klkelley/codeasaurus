@@ -1,10 +1,8 @@
 $(document).ready(function() {
   var $target = $('#markdown')
   var text = $target.text().trim()
-  console.log(text)
   var converter = new showdown.Converter({omitExtraWLInCodeBlock: 'true'})
   var html = converter.makeHtml(text);
-  console.log(html)
   $target.html(html);
 
   var $ace = $('#snippet')
