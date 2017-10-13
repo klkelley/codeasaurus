@@ -19,6 +19,9 @@
         <% end %>
         <% if user_signed_in? %>
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+            <% if current_user.teacher %>
+              <li><%= link_to "Invite", new_user_invitation_path %></li>
+            <% end %>
         <% end %>
       </ul>
     </nav>
