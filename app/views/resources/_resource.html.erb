@@ -9,9 +9,11 @@
   </p>
   <p><%= resource.description %></p>
 
-<% if current_user.teacher %>
-  <%= link_to "edit", edit_resource_path(resource), class: "edit" %>
-<% end %>
+  <div>
+  <% if current_user.teacher %>
+    <%= link_to "edit", edit_resource_path(resource), class: "edit" %> | <%= link_to "delete", resource_path(resource), :method => :delete, :confirm => "Are you sure you want to delete this resource?" %>
+  <% end %>
+  </div>
 </div>
 
 
