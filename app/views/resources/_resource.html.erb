@@ -8,4 +8,8 @@
     <%= link_to resource.title, resource_path(resource) %>
   </p>
   <p><%= resource.description %></p>
+
+  <%= link_to "edit", edit_resource_path(resource), class: "edit" %>
 </div>
+
+
