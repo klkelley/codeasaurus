@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'devise_invitable'
 gem 'simplecov', :require => false, :group => :test
 gem 'video_thumb'
 gem 'video_player'
