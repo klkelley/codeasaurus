@@ -3,6 +3,15 @@
 <p class="resource_description"><%= @resource.description %></p>
 
 
-<div id="<%= @resource.resource_type%>">
-  <%= @resource.body %>
-</div>
+<% if @resource.resource_type == "snippet" || @resource.resource_type == "markdown" %>
+  <div id="<%= @resource.resource_type%>">
+    <%= @resource.body %>
+  </div>
+<% end %>
+
+<% if @resource.resource_type == "video" %>
+  <div>
+    <%= @resource.iframe.html_safe %>
+  </div>
+<% end %>
+
