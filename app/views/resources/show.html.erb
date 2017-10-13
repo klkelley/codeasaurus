@@ -2,7 +2,6 @@
 
 <p class="resource_description"><%= @resource.description %></p>
 
-
 <% if @resource.resource_type == "snippet" || @resource.resource_type == "markdown" %>
   <div id="<%= @resource.resource_type%>">
     <%= @resource.body %>
