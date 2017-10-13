@@ -62,6 +62,11 @@ h1, h2{
   margin-left: auto;
   display: block;
 }
+.form_grouping {
+  margin-right: auto;
+  margin-left: auto;
+  width: 32em;
+}
 
 .edit-field label {
   font-family: $heading_font;
@@ -72,7 +77,9 @@ h1, h2{
 .snippet #resource_body {
   display: none;
 }
-
+.markdown #resource_body {
+  display: none;
+}
 h2{
   font-size:2em;
   grid-column: 2/3;
