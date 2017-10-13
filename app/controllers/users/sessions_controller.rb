@@ -12,7 +12,6 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    p "Users::SessionsController"
     redirect_to resource_path
   end
 

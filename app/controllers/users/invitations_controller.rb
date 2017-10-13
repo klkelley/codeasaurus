@@ -1,8 +1,11 @@
 class Users::InvitationsController < Devise::InvitationsController
   def new
-    p "InvitationsController"
-    @user = User.find(3)
+  end
 
-    TeacherMailer.sample_email(@user).deliver
+  def update
+    super
+    current_user.teacher = true
+    current_user.save
+    p current_user
   end
 end
