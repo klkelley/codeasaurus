@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     authenticated do
       root to: "resources#index"
     end
-
+    get "resources/new/:type", to: "resources#new", as: "new"
     unauthenticated do
       root to: 'devise/sessions#new'
     end
