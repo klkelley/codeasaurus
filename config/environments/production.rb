@@ -77,6 +77,10 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
+  config.cache_classes = true
+  config.serve_static_files = true
+  config.assets.compile = true
+  config.assets.digest = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
