@@ -12,7 +12,9 @@
   </div>
   <div>
     <%= f.label :body %>
-    <div id='snippet'><%= @resource.body %></div>
+    <% if @resource.resource_type == 'snippet' || @resource.resource_type == 'markdown'%>
+      <div id='snippet'><%= @resource.body %></div>
+    <% end %>
     <%= f.text_field :body %>
   </div>
   <div>

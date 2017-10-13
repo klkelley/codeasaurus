@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var canWrite= !($("h2").text() === "Edit")
-  var $codeArea;
+  var $codeArea = $( "#resource_body" )
   var editor;
   var $target = $('#markdown');
   var text = $target.text().trim()
@@ -12,13 +12,21 @@ $(document).ready(function() {
 
     $('.edit-field.snippet > .edit_resource').on("submit", function(){
       event.preventDefault();
+      console.log(editor);
+      console.log($codeArea);
+      console.log(editor.getSession().getValue());
+      $codeArea.val(editor.getSession().getValue());
+    });
+
+    $('.edit-field.markdown > .edit_resource').on("submit", function(){
+      event.preventDefault();
       console.log(editor.getSession().getValue());
       $codeArea.val(editor.getSession().getValue());
     });
 
 
   if ($ace.size() > 0) {
-    $codeArea = $( "[name='resource[body]']" )
+
     editor = ace.edit("snippet");
     editor.setTheme("ace/theme/tomorrow_night");
     editor.getSession().setMode("ace/mode/ruby");
