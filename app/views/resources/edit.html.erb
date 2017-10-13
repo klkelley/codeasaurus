@@ -1,0 +1,26 @@
+<div class='edit-field <%= @resource.resource_type %>'>
+  <h2>Edit</h2>
+
+  <%= form_for(@resource) do |f| %>
+  <div class="form_grouping">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div  class="form_grouping">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <% if @resource.resource_type == 'snippet' || @resource.resource_type == 'markdown'%>
+      <div id='snippet'><%= @resource.body %></div>
+    <%= f.text_area :body %>
+    <% else %>
+    <%= f.text_field :body %>
+    <% end %>
+  </div>
+  <div>
+    <%= f.submit "Update" %>
+  </div>
+  <% end %>
+</div>
