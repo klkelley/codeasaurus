@@ -1,0 +1,22 @@
+<div class='edit-field <%= @resource.resource_type %>'>
+  <h2>Edit</h2>
+
+  <%= form_for(@resource) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <div id='snippet'><% @resource.body %></div>
+    <%= f.text_field :body %>
+  </div>
+  <div>
+    <%= f.submit "Update" %>
+  </div>
+  <% end %>
+</div>

@@ -26,6 +26,10 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
   end
 
+  def edit
+    @resource = Resource.find(params[:id])
+  end
+
   private
 
   def resource_params

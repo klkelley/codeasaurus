@@ -40,7 +40,38 @@ h1, h2{
 
 }
 
+.edit-field {
+  grid-column: 1/4;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.edit-field input {
+  border: 2px solid $text;
+  font-size:1.1em;
+  padding:10px;
+  border-radius:20px;
+  width: 30em;
+  margin: 5px 0 15px 0;
+
+}
+
+.edit-field input[type=submit] {
+  width: 20em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.edit-field label {
+  font-family: $heading_font;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.snippet #resource_body {
+  display: none;
+}
 
 h2{
   font-size:2em;
@@ -56,11 +87,10 @@ h2{
   border-radius: 25px;
   font-size:1em;
   text-align:center;
-
   border-color:solid $text 1 px;
 }
 .field input{
- border: 2px solid $text;
+  border: 2px solid $text;
   font-size:1.1em;
   padding:10px;
   border-radius:20px;
