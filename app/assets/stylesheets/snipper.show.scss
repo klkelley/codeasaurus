@@ -1,15 +1,26 @@
-    #editor {
+#snippet {
         font-size:2em;
         grid-column: 1/ 4;
-        width: 60em;
+        width: 80%;
         height:30em;
         margin:auto;
         border-radius:25px;
-
-    }
+}
 .resource_description{
   grid-column: 1/ 4;
   margin:auto;
   font-size:1.2em;
   margin-bottom:1em;
 }
+
+#markdown {
+  font-size:2em;
+  grid-column: 1/ 4;
+  width: 80%;
+  height:30em;
+  margin:auto;
+  border-radius:25px;
+  border: 1px solid #2d2d2d;
+  padding: 10px;
+}
+

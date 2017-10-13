@@ -2,6 +2,7 @@
 
 <p class="resource_description"><%= @resource.description %></p>
 
-<div id="editor">
+
+<div id="<%= @resource.resource_type%>">
   <%= @resource.body %>
 </div>
