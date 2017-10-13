@@ -1,4 +1,4 @@
-<%if !current_user.teacher? %>
+<%if current_user.teacher? %>
   <h2><%= t "devise.invitations.new.header" %></h2>
 
   <%= form_for :user, url: user_invitation_path do |f| %>
