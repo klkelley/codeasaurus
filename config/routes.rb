@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :invitations => 'users/invitations' }
-  resources :resources
+  resources :resources do
+    resources :issues, only: [:new, :create, :index]
+  end
   devise_scope :user do
     authenticated do
       root to: "resources#index"

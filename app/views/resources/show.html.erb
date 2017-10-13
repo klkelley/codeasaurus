@@ -1,7 +1,5 @@
 <h2><%= @resource.title %></h2>
-
 <p class="resource_description"><%= @resource.description %></p>
-
 
 <% if @resource.resource_type == "snippet" || @resource.resource_type == "markdown" %>
   <div id="<%= @resource.resource_type%>"><%= @resource.body %></div>
@@ -12,4 +10,10 @@
     <%= @resource.iframe.html_safe %>
   </div>
 <% end %>
+
+<div class="issue">
+
+  <%= link_to "Report an issue", new_resource_issue_path(@resource) %>
+
+</div>
 
