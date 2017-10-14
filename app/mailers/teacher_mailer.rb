@@ -3,6 +3,6 @@ class TeacherMailer < ApplicationMailer
 
   def sample_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Sign Up For Codasaurus')
+    mail(to: @user.email, subject: 'Sign Up For Codeasaurus')
   end
 end

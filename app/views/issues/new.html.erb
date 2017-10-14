@@ -1,0 +1,11 @@
+<div>
+<%= form_for :issue, url: {action: "create"} do |f| %>
+  <%= f.label "Describe the problem:" %>
+  <%= f.text_field :body %>
+  <%= f.hidden_field :resource_id, :value => params[:resource_id] %>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
+</div>
+
