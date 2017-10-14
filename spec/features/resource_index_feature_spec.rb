@@ -5,6 +5,13 @@ feature 'As a student I can view resources' do
     Rails.application.load_seed
   end
 
+  before (:each) do
+    visit '/'
+    fill_in "user[email]", with: "sammy@student.com"
+    fill_in "user[password]", with: "gocubsgo"
+    click_button('Log in')
+  end
+
   scenario 'A student visits the resource page' do
     visit '/resources'
 
@@ -25,6 +32,13 @@ end
 feature 'As a student, I can search resources' do
   before (:all) do
     Rails.application.load_seed
+  end
+
+  before (:each) do
+    visit '/'
+    fill_in "user[email]", with: "sammy@student.com"
+    fill_in "user[password]", with: "gocubsgo"
+    click_button('Log in')
   end
 
   scenario "The search button doesn't change the page" do
