@@ -11,15 +11,18 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
-  <div>
-    <%= f.label :body %>
     <% if @resource.resource_type == 'snippet' || @resource.resource_type == 'markdown'%>
+    <div>
+      <%= f.label :body %>
       <div id='snippet'><%= @resource.body %></div>
-    <%= f.text_area :body %>
+      <%= f.text_area :body %>
+    </div>
     <% else %>
+  <div class="form_grouping">
+    <%= f.label :body %>
     <%= f.text_field :body %>
-    <% end %>
   </div>
+    <% end %>
   <div>
     <%= f.submit "Update" %>
   </div>
