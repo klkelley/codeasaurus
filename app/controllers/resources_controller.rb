@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
   def index
     if params[:search]
       search_term = "%#{params[:search][:term]}%".downcase
-      if params[:search][:term] && params[:search][:resource_type] != "Pick a type"
+      if params[:search][:term].length > 0 && params[:search][:resource_type] != "Pick a type"
         @resources = Resource.where('lower(title) LIKE ? or lower(description) LIKE ? AND resource_type = ?', search_term, search_term, params[:search][:resource_type])
       elsif params[:search][:term].length > 0
         @resources = Resource.where('lower(title) LIKE ? or lower(description) LIKE ?', search_term, search_term)
