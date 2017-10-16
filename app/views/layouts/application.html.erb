@@ -12,8 +12,11 @@
 <body class="container">
   <div class="heading">
     <%= image_tag('sammy.png', alt:'Green dinosaur') %>
+    <div class='dropdown'>
     <nav>
       <ul>
+        <button class='dropbtn'>Menu</button>
+        <div class="dropdown-content">
         <% unless current_page?('/')%>
           <li><%= link_to "Home", root_path %></li>
         <% end %>
@@ -27,8 +30,10 @@
               <li><%= link_to "View Issues", issues_path %></li>
             <% end %>
         <% end %>
+      </div>
       </ul>
     </nav>
+  </div>
     <h1>Codeasaurus</h1>
   </div>
   <p class="notice"><%= notice %></p>
