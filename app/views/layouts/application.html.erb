@@ -15,7 +15,9 @@
     <div class='dropdown'>
     <nav>
       <ul>
-        <button class='dropbtn'>Menu</button>
+        <% if user_signed_in? %>
+          <button class='dropbtn'>Menu</button>
+        <% end %>
         <div class="dropdown-content">
         <% unless current_page?('/')%>
           <li><%= link_to "Home", root_path %></li>
