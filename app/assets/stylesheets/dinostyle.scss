@@ -18,6 +18,10 @@ $heading_font:'Bowlby One SC', cursive;
 
 }
 
+.heading h1 {
+  padding-right: 135px;
+}
+
 .heading img{
   float:left;
   height:12em;
@@ -87,6 +91,12 @@ h2{
 .field{
   padding:10px;
 }
+
+.field form {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .content {
   grid-column:2/3;
   padding:30px 0;
@@ -99,8 +109,12 @@ h2{
 .field input{
   border: 2px solid $text;
   font-size:1.1em;
-  padding:10px;
+  padding:10px 0 10px 20px;
   border-radius:20px;
+}
+
+.field select {
+  height: 43px;
 }
 
 input[type=submit]{
@@ -109,7 +123,7 @@ input[type=submit]{
   border: 1px solid $text;
   font-family:$heading_font;
   color: $text;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -126,6 +140,7 @@ nav ul li {
 .notice{
   color: $error;
   grid-column:2/3;
+  text-align: center;
 }
 .alert{
   grid-column:2/3;
@@ -160,8 +175,9 @@ nav a:hover {
   background: darken($site_background, 5%);
 }
 
-.issue{
+#issue{
   clear: both;
 }
+
 
 
